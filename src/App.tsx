@@ -15,11 +15,12 @@ import {observer} from "mobx-react-lite";
 import Title from "./components/Title";
 import ButtonSquare from "./components/UI/ButtonSquare";
 import SettingsService from "./API/SettingsService";
+import classNames from 'classnames';
+import {theme} from './store/theme';
 
 const App = observer(() => {
   const [hintsVision, setHintsVision] = useState(true)
   const [settingsVision, setSettingsVision] = useState(false)
-
 
   useEffect(() => {
     const {hints, time: initialTime} = SettingsService.getConfig()
@@ -77,7 +78,12 @@ const App = observer(() => {
   }
 
   return (
-    <div className="app">
+    <div 
+      className={classNames(
+        'app',
+        { 'white-theme': theme.whiteTheme },  
+      )}
+    >
       <Header
         settingsVision={settingsVision}
         setSettingsVision={setSettingsVision}

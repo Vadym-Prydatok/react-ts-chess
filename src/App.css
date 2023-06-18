@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
 
 :root {
-    --main-color: #40C575;
+    --main-color: #3dcc76;
 }
 
 *{
@@ -78,10 +78,29 @@ h6{
 
 .app{
     min-height: 100vh;
-    background-color: #1E1E1E;
     display: flex;
     flex-direction: column;
     position: relative;
+    background-image: linear-gradient(
+      245deg,
+      hsl(223deg 68% 6%) 55%,
+      hsl(245deg 46% 13%) 85%,
+      hsl(253deg 55% 19%) 93%,
+      hsl(257deg 62% 25%) 96%,
+      hsl(259deg 68% 31%) 99%,
+      hsl(261deg 74% 36%) 100%,
+      hsl(262deg 80% 42%) 101%,
+      hsl(264deg 87% 47%) 101%,
+      hsl(266deg 100% 50%) 101%,
+      hsl(264deg 100% 61%) 101%,
+      hsl(265deg 99% 66%) 101%,
+      hsl(266deg 97% 71%) 101%,
+      hsl(268deg 95% 76%) 101%,
+      hsl(269deg 91% 81%) 101%,
+      hsl(270deg 83% 85%) 101%,
+      hsl(271deg 68% 90%) 100%,
+      hsl(270deg 27% 94%) 100%
+    );
 }
 
 .container{
@@ -146,9 +165,28 @@ h6{
 }
 
 .header, .settings{
-    background-color: #141414;
     width: 100%;
     border-bottom: 1px solid var(--main-color);
+    background-image: linear-gradient(
+      245deg,
+      hsl(223deg 68% 6%) 55%,
+      hsl(245deg 46% 13%) 85%,
+      hsl(253deg 55% 19%) 93%,
+      hsl(257deg 62% 25%) 96%,
+      hsl(259deg 68% 31%) 99%,
+      hsl(261deg 74% 36%) 100%,
+      hsl(262deg 80% 42%) 101%,
+      hsl(264deg 87% 47%) 101%,
+      hsl(266deg 100% 50%) 101%,
+      hsl(264deg 100% 61%) 101%,
+      hsl(265deg 99% 66%) 101%,
+      hsl(266deg 97% 71%) 101%,
+      hsl(268deg 95% 76%) 101%,
+      hsl(269deg 91% 81%) 101%,
+      hsl(270deg 83% 85%) 101%,
+      hsl(271deg 68% 90%) 100%,
+      hsl(270deg 27% 94%) 100%
+    );
 }
 
 .header__inner{
@@ -178,6 +216,10 @@ h6{
 
 .creator__text{
     color: var(--main-color);
+}
+
+.creator__img{
+  margin-right: 10px; 
 }
 
 .settings-open-btn, .settings-close-btn{
@@ -349,6 +391,27 @@ h6{
     background-color: #C41E3A;
 }
 
+.white-theme {
+  background-image: linear-gradient(
+  90deg,
+  hsl(270deg 100% 7%) 0%,
+  hsl(258deg 88% 11%) 7%,
+  hsl(246deg 77% 15%) 14%,
+  hsl(234deg 68% 19%) 21%,
+  hsl(223deg 59% 24%) 29%,
+  hsl(211deg 51% 30%) 36%,
+  hsl(199deg 44% 35%) 43%,
+  hsl(187deg 38% 41%) 50%,
+  hsl(175deg 32% 48%) 57%,
+  hsl(163deg 32% 55%) 64%,
+  hsl(151deg 36% 62%) 71%,
+  hsl(139deg 39% 70%) 79%,
+  hsl(128deg 45% 78%) 86%,
+  hsl(116deg 56% 86%) 93%,
+  hsl(104deg 100% 95%) 100%
+);
+}
+
 .king{
     animation: kingIsUnderAttack 1.5s;
 }
@@ -508,6 +571,74 @@ h6{
     .lost-figures__list{
         max-width: 100%;
     }
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 58px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 34px;
+    width: 34px;
+    left: 0px;
+    bottom: 4px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    box-shadow: 0 0px 15px #2020203d;
+    background: white url('https://i.ibb.co/FxzBYR9/night.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+input:checked + .slider {
+    background-color: var(--main-color);
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px var(--main-color);
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(24px);
+    -ms-transform: translateX(24px);
+    transform: translateX(24px);
+    background: white url('https://i.ibb.co/7JfqXxB/sunny.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
 }
 
 

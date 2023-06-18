@@ -3,6 +3,7 @@ import ButtonSquare from "./UI/ButtonSquare";
 import InputSquare from "./UI/InputSquare";
 import ButtonToggle from "./UI/ButtonToggle";
 import ExclamationMark from "./UI/ExclamationMark";
+import {theme} from '../store/theme';
 
 interface SettingsProps {
   setSettings: (time: number, hints: boolean) => void
@@ -31,7 +32,7 @@ const Settings: FC<SettingsProps> = ({setSettings, hintsVision}) => {
   }
 
   return (
-    <div className={'settings'}>
+    <div className={theme.whiteTheme ? 'settings white-theme' : 'settings'}>
       <div className="container">
         <div className="settings__inner">
           <div className="settings__times">
